@@ -1,7 +1,18 @@
 #include <string>
 #include <iostream>
+#include <vector>
 
 void redirect_in_to_file(std::istream& in, std::string filename);
+
+template <typename T>
+void print_matrix(std::vector<std::vector<T>> mat) {
+  for (auto& line : mat) {
+    for (auto& v : line) {
+      std::cout << v << "\t";
+    }
+    std::cout << std::endl;
+  }
+}
 
 template <typename T>
 int get_integer_num_digits(T n) {
