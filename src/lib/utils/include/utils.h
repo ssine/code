@@ -5,7 +5,19 @@
 void redirect_in_to_file(std::istream& in, std::string filename);
 
 template <typename T>
-void print_matrix(std::vector<std::vector<T>> mat) {
+void print_vector(std::vector<T> vec, std::string sep = " ") {
+  std::cout << "[";
+  bool is_first = true;
+  for (auto& v : vec) {
+    if (!is_first) cout << sep;
+    is_first = false;
+    std::cout << v;
+  }
+  std::cout << "]\n";
+}
+
+template <typename T>
+void print_matrix(std::vector<std::vector<T>>& mat) {
   for (auto& line : mat) {
     for (auto& v : line) {
       std::cout << v << "\t";
