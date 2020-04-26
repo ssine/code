@@ -1,6 +1,8 @@
 #include "leetcode.h"
 #include "utils.h"
 
+using ListNode = ListNodeT<int>;
+
 class Solution {
  public:
   ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {

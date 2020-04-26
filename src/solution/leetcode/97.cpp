@@ -16,10 +16,9 @@ class Solution {
           dp[i][j] = dp[i][j - 1] && s3[i + j - 1] == s2[j - 1];
         else if (j == 0)
           dp[i][j] = dp[i - 1][j] && s3[i + j - 1] == s1[i - 1];
-        else {
+        else
           dp[i][j] = (dp[i][j - 1] && s3[i + j - 1] == s2[j - 1]) ||
                      (dp[i - 1][j] && s3[i + j - 1] == s1[i - 1]);
-        }
       }
     }
     return dp[l1][l2];

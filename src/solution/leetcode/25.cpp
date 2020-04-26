@@ -1,6 +1,8 @@
 #include "leetcode.h"
 #include "utils.h"
 
+using ListNode = ListNodeT<int>;
+
 class Solution {
  public:
   bool has_k_remain(ListNode* h, int k) {
