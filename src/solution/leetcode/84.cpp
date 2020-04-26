@@ -11,9 +11,10 @@ class Solution {
     while (idx < n) {
       if (incIdxs.empty() || heights[idx] > heights[incIdxs.top()]) {
         incIdxs.push(idx);
-        idx ++;
+        idx++;
       } else {
-        int height = heights[incIdxs.top()]; incIdxs.pop();
+        int height = heights[incIdxs.top()];
+        incIdxs.pop();
         int leftIdx = incIdxs.empty() ? -1 : incIdxs.top();
         maxArea = max(maxArea, height * (idx - (leftIdx + 1)));
       }
