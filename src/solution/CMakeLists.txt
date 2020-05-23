@@ -1,4 +1,4 @@
 # add the executable
-add_executable(main leetcode/188.cpp)
+add_executable(main leetcode/127.cpp)
 target_include_directories(main PUBLIC ../lib)
 target_link_libraries(main PUBLIC utils graph number)
