@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -58,6 +59,7 @@ struct TreeNodeT {
   TreeNodeT<T>* left;
   TreeNodeT<T>* right;
   TreeNodeT(T x) : val(x), left(nullptr), right(nullptr) {}
+  TreeNodeT(T x, TreeNodeT *left, TreeNodeT *right) : val(x), left(left), right(right) {}
 };
 
 template <typename T>
