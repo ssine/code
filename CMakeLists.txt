@@ -19,5 +19,6 @@ if (do_test)
   add_subdirectory(src/test)
   add_test(graph_test graph_test)
   add_test(prime_test prime_test)
+  add_test(misc_test misc_test)
 endif()
 
