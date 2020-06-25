@@ -1,6 +1,6 @@
 #include "leetcode.h"
 
-template <typename T, T N> constexpr auto make_constexpr_array(std::integral_constant<T, N>) {
+template <int N> constexpr auto generate_powers() {
   std::array<int, N> result = {};
   int cur = 1;
   result[0] = 1;
@@ -15,7 +15,7 @@ class Solution {
 public:
   bool isPowerOfFour(int num) {
     constexpr int N = 16; // log(numeric_limits<int>::max()) / log(4), however log is not a constexpr function
-    constexpr auto arr = make_constexpr_array(std::integral_constant<int, N>{});
+    constexpr auto arr = generate_powers<N>();
     for (int p : arr)
       if (p == num)
         return true;
