@@ -2,16 +2,19 @@
 #include "utils.h"
 
 class Solution {
- public:
-  int trap(vector<int>& height) {
-    if (height.size() <= 2) return 0;
+public:
+  int trap(vector<int> &height) {
+    if (height.size() <= 2)
+      return 0;
     vector<int> local_extreme;
-    if (height[0] > height[1]) local_extreme.push_back(0);
+    if (height[0] > height[1])
+      local_extreme.push_back(0);
     for (int i = 1; i < height.size() - 1; i++) {
-      if (height[i] >= height[i-1] && height[i] >= height[i+1])
+      if (height[i] >= height[i - 1] && height[i] >= height[i + 1])
         local_extreme.push_back(i);
     }
-    if (*(height.end()-2) < height.back()) local_extreme.push_back(height.size() - 1);
+    if (*(height.end() - 2) < height.back())
+      local_extreme.push_back(height.size() - 1);
 
     int ans = 0;
     for (int i = 0; i < local_extreme.size() - 1;) {
@@ -43,15 +46,15 @@ class Solution {
 
 int main() {
   Solution sol;
-  vector<int> h = {0,1,0,2,1,0,1,3,2,1,2,3};
+  vector<int> h = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 3};
   cout << sol.trap(h) << endl;
   h = {5, 4, 1, 2};
   cout << sol.trap(h) << endl;
-  h = {5,2,1,2,1,5};
+  h = {5, 2, 1, 2, 1, 5};
   cout << sol.trap(h) << endl;
-  h = {0,1,0,2,1,0,1,3,2,1,2,1};
+  h = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
   cout << sol.trap(h) << endl;
-  h = {5,5,1,7,1,1,5,2,7,6};
+  h = {5, 5, 1, 7, 1, 1, 5, 2, 7, 6};
   cout << sol.trap(h) << endl;
   return 0;
 }
